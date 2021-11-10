@@ -1,0 +1,38 @@
+.App {
+	margin: 0;
+	min-height: 100vh;
+	min-width: 100vw;
+}
+
+.btn-purple {
+	background-color: purple !important;
+	color: white !important;
+	outline: none !important;
+}
+
+.btn:focus {
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+/* NavigationBar section */
+
+.navbar-container a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.navbar-container a:hover {
+	color: inherit;
+}
+
+/* Login section */
+
+.auth-form {
+	max-width: 30rem !important;
+  text-align: left !important;
+}
+
+.auth-form input{
+	box-shadow: none !important;
+}
