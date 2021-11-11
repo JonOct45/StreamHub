@@ -4,11 +4,11 @@
 	min-width: 100vw;
 }
 
-.btn-purple {
+/* .btn-purple {
 	background-color: purple !important;
 	color: white !important;
 	outline: none !important;
-}
+} */
 
 .btn:focus {
 	outline: none !important;
@@ -17,22 +17,123 @@
 
 /* NavigationBar section */
 
-.navbar-container a {
+.navbar-container a,
+.navbar-container a:hover {
 	text-decoration: none;
 	color: inherit;
 }
 
-.navbar-container a:hover {
-	color: inherit;
+.navbar-dropdown a,
+.navbar-dropdown a:hover,
+.navbar-dropdown a.active,
+.navbar-dropdown a:active {
+	color: #333;
 }
 
-/* Login section */
+.navbar-dropdown div,
+.navbar-dropdown div:focus,
+.navbar-dropdown div:active,
+.navbar-dropdown div.active {
+	background-color: #fff;
+}
+
+/* Login Page */
 
 .auth-form {
 	max-width: 30rem !important;
-  text-align: left !important;
+	text-align: left !important;
 }
 
-.auth-form input{
+.auth-form input {
 	box-shadow: none !important;
+}
+
+/* Profile Settings Page */
+
+.settings-container {
+	max-width: 45rem !important;
+}
+
+/* Streaming Page */
+
+.streaming-container {
+	display: flex;
+	justify-content: center;
+}
+
+.streaming-userlist {
+	flex-shrink: 0;
+	width: 12rem;
+	max-height: 600px;
+	overflow-y: auto;
+}
+
+.streaming-chat {
+	flex-shrink: 0;
+	width: 20rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.streaming-chat div:last-child {
+	border: none !important;
+}
+
+.streaming-chat textarea {
+	resize: none;
+	border: none !important;
+	border-radius: 0 !important;
+	border-top: rgba(0, 0, 0, 0.125) solid 1px !important;
+	box-shadow: none !important;
+}
+
+.streaming-chat-wrap {
+	padding: 8px 16px;
+}
+
+.streaming-chat-top {
+  max-height: 498px;
+  overflow-y: auto;
+}
+
+.recommended {
+}
+
+/* User Card */
+
+.user-card img {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	margin-right: 8px;
+}
+
+/* User Chat */
+
+.user-chat img {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	grid-area: profile;
+}
+
+.user-chat img + div {
+	grid-area: body;
+}
+
+.user-chat img + div span:first-child {
+	margin-right: 8px;
+	color: #767676;
+}
+
+.user-chat img + div span:first-child + span {
+	font-size: 0.9rem;
+}
+
+.user-chat {
+	display: grid;
+	grid-template-columns: 35px 250px;
+	grid-template-rows: auto;
+	grid-template-areas: 'profile body ';
 }
