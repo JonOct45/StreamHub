@@ -13,7 +13,7 @@ body {
 	width: 100%;
 	min-height: 100%;
 	color: var(--primary-txt-clr);
-	background-color: #fafafa !important;
+	background-color: grey !important;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -22,3 +22,221 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/*---------------------------Raymond Code-----------------------*/
+.col-1 {
+	right: -100px;
+	padding: 160px;
+	position: relative;
+	background: #430f02;
+	border: black solid 1px;
+	
+}
+
+.col-3 {
+	right: -100px;
+	padding: 160px;
+	position: relative;
+	border: black solid 1px;
+	
+}
+
+.movie1, .movie2, .movie3 {
+	left: -13px;
+	top: -161px;
+	width: 480px;
+	color:white;
+	line-height: 40px;
+	font-weight: bold;
+	text-align: center;
+	position: relative;
+	background: #282727;
+	vertical-align: middle;
+	box-sizing: border-box;
+	border: 1px solid #555555;
+}
+
+.doraMovie, .shangChiMovie, .squidGame {
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	/* object position is either croping top or bottom */
+	object-position: top; 
+}
+
+.playButton1, .playButton2, .playButton3{
+	width: 15%;
+	top: 160px;
+	height: 20%;
+	left: 210px;
+	cursor: pointer;
+	object-fit: cover;
+	position: absolute;
+	object-position: top;
+}
+
+.Box {
+	top: 500px;
+	left: 100px;
+	width: 1760px;
+	height: 420px;
+	position: absolute;
+	background: #282727;
+	box-sizing: border-box;
+	border: 1px solid white;
+}
+
+.title {
+	top: 50px;
+	left: 720px;
+	width: 354px;
+	height: 70px;
+	color: White;
+	font-size: 35px;
+	font-weight: bold;
+	line-height: 41px;
+	position: absolute;
+	font-style: normal;
+	font-family: Roboto;
+}
+
+.carouselMiddle {
+	z-index: 30;
+	top: 120px;
+	left: 715px;
+	width: 341px;
+	height: 252px;
+	display: block;
+	cursor: pointer;
+	position: absolute;
+	background: #FFFFFF;
+	box-sizing: border-box;
+	border: 1px solid #000000;
+}
+
+.carouselRight1 {
+	z-index: 3;
+	top: 135px;
+	left: 897px;
+	width: 341px;
+	height: 220px;
+	cursor: pointer;
+	position: absolute;
+	background: #FFFFFF;
+	box-sizing: border-box;
+	border: 1px solid #000000;
+}
+
+.carouselRight2 {
+	top: 155px;
+	left: 1057px;
+	width: 341px;
+	height: 180px;
+	cursor: pointer;
+	position: absolute;
+	background: #FFFFFF;
+	box-sizing: border-box;
+	border: 1px solid #000000;
+	
+}
+
+.carouselLeft1 {
+	z-index: 3;
+	top: 135px;
+	left: 505px;
+	width: 341px;
+	height: 220px;
+	cursor: pointer;
+	position: absolute;
+	background: #FFFFFF;
+	box-sizing: border-box;
+	border: 1px solid #000000;
+}
+
+.carouselLeft2 {
+	top: 155px;
+	left: 366px;
+	width: 341px;
+	height: 180px;
+	cursor: pointer;
+	position: absolute;
+	background: #FFFFFF;
+	box-sizing: border-box;
+	border: 1px solid #000000;
+	
+}
+
+.rightClick {
+	width: 47%;
+	top: 80px;
+	left: 40px;
+	height: 20%;
+	cursor: pointer;
+	position: absolute;
+	border-radius: 80px;
+	background-color:white;
+}
+
+.leftClick {
+	width: 47%;
+	top: 210px;
+	left: 40px;
+	height: 20%;
+	cursor: pointer;
+	position: absolute;
+	border-radius: 80px;
+	background-color: white;
+}
+
+.rightClick1 {
+	width: 4%;
+	top: 205px;
+	left: 81%;
+	height: 17%;
+	cursor: pointer;
+	position: absolute;
+	border-radius: 80px;
+	background-color:white;
+}
+
+.leftClick1 {
+	width: 4%;
+	top: 205px;
+	left: 15%;
+	height: 17%;
+	cursor: pointer;
+	position: absolute;
+	border-radius: 80px;
+	background-color: white;
+}
+
+.spiderman, .blackWidow {
+	top: 0px;
+	z-index: 3;
+	left: -1px;
+	width: 341px;
+	height: 220px;
+	position: absolute;
+	background: #FFFFFF;
+	box-sizing: border-box;
+	border: 1px solid #000000;
+	object-position: top;
+	object-fit: cover;
+}
+
+.jungleCruise, .wendyWu {
+	top: 0px;
+	left: -1px;
+	width: 341px;
+	height: 178px;
+	position: absolute;
+	background: #FFFFFF;
+	box-sizing: border-box;
+	border: 1px solid #000000;
+	object-position: top;
+	object-fit: cover;
+}
+
