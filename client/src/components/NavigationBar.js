@@ -5,10 +5,8 @@ import Container from 'react-bootstrap/esm/Container';
 import Nav from 'react-bootstrap/Nav';
 import { NavLink } from 'react-router-dom';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Card from 'react-bootstrap/Card';
 
 export default function NavigationBar({ isAuth, handleLogout }) {
-	const [showDropdown, setShowDropdown] = useState(false);
 	return (
 		<Navbar
 			className="navbar-container mb-5"
@@ -39,7 +37,7 @@ export default function NavigationBar({ isAuth, handleLogout }) {
 						) : (
 							<>
 								<Nav.Link as="div">
-									<NavLink to="/streaming">Live Streming</NavLink>
+									<NavLink to="/streaming/oqxAJKy0ii4">Live Streming</NavLink>
 								</Nav.Link>
 								<NavDropdown
 									className="navbar-dropdown"

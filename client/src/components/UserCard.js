@@ -1,13 +1,23 @@
 import React from 'react';
+import { Switch } from 'react-router';
 
-export default function UserCard({ type }) {
+export default function UserCard({ pic, name, state }) {
+	let color = 'grey';
+	switch (state) {
+		case 'active':
+			color = 'green';
+			break;
+		case 'idle':
+			color = 'yellow';
+			break;
+		default:
+			color = 'green';
+	}
 	return (
 		<div className="user-card">
-			<img
-				src="https://img.thriftbooks.com/api/images/i/s/45E001D8D3B1D7C6DBACC9900E145C41F009A910.jpg"
-				alt="123"
-			/>
-			<span>denjie</span>
+			<img src={pic} alt="profile pic" />
+			<div style={{ backgroundColor: color }}></div>
+			<span>{name}</span>
 		</div>
 	);
 }

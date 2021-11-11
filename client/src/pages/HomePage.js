@@ -8,27 +8,32 @@ export default function HomePage() {
 				<div class="row">
 					<div class="col-1"></div>
 					<div class="col-3">
-						<img class="doraMovie" src="/images/movie1.jpg" alt="Dora"></img>
-						<div class="movie1">Dora Explorer</div>
-						<img
-							class="playButton1"
-							src="/images/PlayButton.png"
-							alt="button1"
-						></img>
+						<NavLink to="/streaming/gUTtJjV852c">
+							<img class="doraMovie" src="/images/movie1.jpg" alt="Dora"></img>
+							<div class="movie1">Dora Explorer</div>
+							<img
+								class="playButton1"
+								src="/images/PlayButton.png"
+								alt="button1"
+							></img>
+						</NavLink>
 					</div>
 					<div class="col-3">
-						<img
-							class="shangChiMovie"
-							src="/images/shangchi.jpg"
-							alt="ShangChi"
-						></img>
-						<div class="movie2">Shang Chi</div>
-						<img
-							class="playButton2"
-							src="/images/PlayButton.png"
-							alt="button2"
-						></img>
+						<NavLink to="/streaming/8YjFbMbfXaQ">
+							<img
+								class="shangChiMovie"
+								src="/images/shangchi.jpg"
+								alt="ShangChi"
+							></img>
+							<div class="movie2">Shang Chi</div>
+							<img
+								class="playButton2"
+								src="/images/PlayButton.png"
+								alt="button2"
+							></img>
+						</NavLink>
 					</div>
+
 					<div class="col-3">
 						<NavLink to="/streaming/oqxAJKy0ii4">
 							<img
@@ -61,13 +66,15 @@ export default function HomePage() {
 
 			<div class="Box">
 				<div class="title">Most Watched Movies</div>
-				<div class="carouselMiddle">
-					<img
-						class="squidGame"
-						src="/images/squidgame.jpg"
-						alt="SquidGame"
-					></img>
-				</div>
+				<NavLink to="/streaming/oqxAJKy0ii4">
+					<div class="carouselMiddle">
+						<img
+							class="squidGame"
+							src="/images/squidgame.jpg"
+							alt="SquidGame"
+						></img>
+					</div>
+				</NavLink>
 				<div class="carouselRight1">
 					<img
 						class="spiderman"

@@ -69,7 +69,7 @@ function App() {
 				return true;
 			}
 		}
-    return false
+		return false;
 	};
 
 	let routes = (
@@ -105,6 +105,7 @@ function App() {
 		<div className="App">
 			<NavigationBar isAuth={isAuth} handleLogout={logout} />
 			<div>{routes}</div>
+			<div style={{ height: '100px' }} className="footer"></div>
 		</div>
 	);
 }
