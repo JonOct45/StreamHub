@@ -28,6 +28,9 @@ export default function NavigationBar({ isAuth, handleLogout }) {
 						{!isAuth ? (
 							<>
 								<Nav.Link as="div">
+									<NavLink to="/streaming/oqxAJKy0ii4">Live Streming</NavLink>
+								</Nav.Link>
+								<Nav.Link as="div">
 									<NavLink to="/login">Log in</NavLink>
 								</Nav.Link>
 								<Nav.Link as="div">
@@ -53,7 +56,7 @@ export default function NavigationBar({ isAuth, handleLogout }) {
 									<NavDropdown.Divider />
 									<NavDropdown.Item
 										as="div"
-										style={{ cursor: 'pointer', color: 'red' }}
+										style={{ cursor: 'pointer', color: '#dc3545' }}
 										onClick={handleLogout}
 									>
 										<span>Sign out</span>

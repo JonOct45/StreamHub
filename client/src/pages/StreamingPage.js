@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import Container from 'react-bootstrap/esm/Container';
 import Card from 'react-bootstrap/Card';
@@ -17,6 +17,15 @@ export default function StreamingPage() {
 	const [chat, setChat] = useState('');
 	const [chatHistory, setChatHistory] = useState([]);
 	const { id } = useParams('id');
+
+	useEffect(() => {
+		setChatHistory([
+			{
+				name: localStorage.getItem('username') || 'visitor456',
+				chat: 'Join the room',
+			},
+		]);
+	}, [id]);
 
 	const handleKeyPress = e => {
 		if (e.key === 'Enter') {
@@ -38,15 +47,26 @@ export default function StreamingPage() {
 		<>
 			<Container>
 				<div className="streaming-container">
-					{/* <div> */}
-					{/* <div className="d-flex "> */}
 					<Card className="streaming-userlist">
 						<ListGroup variant="flush">
+							<ListGroup.Item>
+								<UserCard
+									pic={
+										localStorage.getItem('imgUrl') ||
+										'https://source.unsplash.com/user/erondu/daily'
+									}
+									name={localStorage.getItem('username') || 'visitor456'}
+									state="active"
+								/>
+							</ListGroup.Item>
 							{userlist.map(user => {
-								const randomPic = 'https://source.unsplash.com/random';
 								return (
 									<ListGroup.Item key={user.id}>
-										<UserCard pic={randomPic} name={user.name} state="active" />
+										<UserCard
+											pic={'https://source.unsplash.com/random'}
+											name={user.name}
+											state="active"
+										/>
 									</ListGroup.Item>
 								);
 							})}
@@ -84,7 +104,10 @@ export default function StreamingPage() {
 									<UserChat
 										name={data.name}
 										text={data.chat}
-										pic="https://source.unsplash.com/user/erondu/daily"
+										pic={
+											localStorage.getItem('imgUrl') ||
+											'https://source.unsplash.com/user/erondu/daily'
+										}
 									/>
 								</div>
 							))}

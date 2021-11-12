@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 import { Switch, Route } from 'react-router-dom';
 
 //Pages
@@ -17,6 +18,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 	const [isAuth, setIsAuth] = useState(false);
+	const history = useHistory();
 
 	console.log('Is user login in ? ', isAuth);
 
@@ -46,7 +48,9 @@ function App() {
 		localStorage.removeItem('fullName');
 		localStorage.removeItem('username');
 		localStorage.removeItem('password');
+		localStorage.removeItem('imgUrl');
 		setIsAuth(false);
+		history.push('/');
 	};
 
 	const login = userInput => {

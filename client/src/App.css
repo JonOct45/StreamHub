@@ -4,11 +4,9 @@
 	min-width: 100vw;
 }
 
-/* .btn-purple {
-	background-color: purple !important;
-	color: white !important;
-	outline: none !important;
-} */
+.spacer {
+	flex-grow: 1;
+}
 
 .btn:focus {
 	outline: none !important;
@@ -54,6 +52,50 @@
 	max-width: 45rem !important;
 }
 
+.settings-profile {
+	display: flex;
+	justify-content: center;
+}
+
+.settings-profile img {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.settings-profile img + div {
+	display: flex;
+	flex-direction: column;
+}
+
+.settings-security p {
+	cursor: pointer;
+}
+
+.settings-security p:hover {
+	text-decoration: underline;
+}
+
+.settings-security p:last-child {
+	color: var(--danger-color);
+}
+
+.edit-username {
+	display: flex;
+}
+
+.edit-username + form input {
+	box-shadow: none !important;
+}
+
+.edit-username svg {
+	width: 1rem;
+	margin-left: 10px;
+	cursor: pointer;
+	padding-bottom: 5px;
+}
+
 /* Streaming Page */
 
 .streaming-container {
@@ -67,6 +109,31 @@
 	max-height: 600px;
 	overflow-y: auto;
 	border-radius: 0 !important;
+}
+
+.streaming-chat-top:hover::-webkit-scrollbar,
+.streaming-userlist:hover::-webkit-scrollbar {
+	display: block;
+}
+
+.streaming-chat-top::-webkit-scrollbar,
+.streaming-userlist::-webkit-scrollbar {
+	width: 6px;
+	background-color: none;
+	box-shadow: unset;
+	display: none;
+}
+
+.streaming-chat-top::-webkit-scrollbar-track,
+.streaming-userlist::-webkit-scrollbar-track {
+	border-radius: 10px;
+	background-color: transparent;
+}
+
+.streaming-chat-top::-webkit-scrollbar-thumb,
+.streaming-userlist::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: #ccc;
 }
 
 .streaming-chat {
@@ -115,6 +182,25 @@
 	color: unset;
 }
 
+@media (max-width: 992px) {
+	.streaming-userlist {
+		display: none !important;
+	}
+
+	.streaming-container {
+		flex-direction: column;
+	}
+
+	.streaming-container iframe {
+		width: auto;
+	}
+
+	.streaming-chat {
+		width: 100%;
+		height: 20rem;
+	}
+}
+
 /* User Card */
 
 .user-card img {
@@ -132,11 +218,7 @@
 	border-radius: 50%;
 	position: absolute;
 	left: 40px;
-	bottom: 8px;
-}
-
-.user-card span {
-	
+	top: 33px;
 }
 
 /* User Chat */
@@ -166,4 +248,31 @@
 	grid-template-columns: 35px 250px;
 	grid-template-rows: auto;
 	grid-template-areas: 'profile body ';
+}
+
+/* Danger modal */
+
+.danger-icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 2rem;
+	height: 2rem;
+	background-color: var(--danger-color);
+	border-radius: 5px;
+}
+
+.danger-modal img {
+	width: 0.5rem;
+}
+
+/* Upload Profile Modal Section */
+.upload-modal-profile-pic {
+	width: 100%;
+	height: auto;
+	margin-bottom: 2rem;
+}
+
+.modal-body input {
+	box-shadow: none !important;
 }
