@@ -103,7 +103,7 @@ export default function StreamingPage() {
 				</div>
 			</Container>
 			<Container>
-				<h2 className="mt-3">Recommended</h2>
+				<h2 className="mt-3"><center>Recommended</center></h2>
 				<CardGroup className="recommended mt-3">
 					<Card>
 						<NavLink to="/streaming/R9DWTt37khU">
