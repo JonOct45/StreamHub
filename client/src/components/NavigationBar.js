@@ -28,7 +28,7 @@ export default function NavigationBar({ isAuth, handleLogout }) {
 						{!isAuth ? (
 							<>
 								<Nav.Link as="div">
-									<NavLink to="/streaming/oqxAJKy0ii4">Live Streming</NavLink>
+									<NavLink to="/streaming/oqxAJKy0ii4">Live Streaming</NavLink>
 								</Nav.Link>
 								<Nav.Link as="div">
 									<NavLink to="/login">Log in</NavLink>
@@ -40,7 +40,7 @@ export default function NavigationBar({ isAuth, handleLogout }) {
 						) : (
 							<>
 								<Nav.Link as="div">
-									<NavLink to="/streaming/oqxAJKy0ii4">Live Streming</NavLink>
+									<NavLink to="/streaming/oqxAJKy0ii4">Live Streaming</NavLink>
 								</Nav.Link>
 								<NavDropdown
 									className="navbar-dropdown"
