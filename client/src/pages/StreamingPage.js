@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router';
 import Container from 'react-bootstrap/esm/Container';
 import Card from 'react-bootstrap/Card';
@@ -17,6 +17,7 @@ export default function StreamingPage() {
 	const [chat, setChat] = useState('');
 	const [chatHistory, setChatHistory] = useState([]);
 	const { id } = useParams('id');
+	const chatRef = useRef();
 
 	useEffect(() => {
 		setChatHistory([
@@ -27,9 +28,12 @@ export default function StreamingPage() {
 		]);
 	}, [id]);
 
+	useEffect(() => {
+		chatRef.current.scrollTop = chatRef.current.scrollHeight; // bottom chat show first
+	}, [chatHistory]);
+
 	const handleKeyPress = e => {
 		if (e.key === 'Enter') {
-			console.log('Enter was pressed');
 			processInput();
 		}
 	};
@@ -77,11 +81,11 @@ export default function StreamingPage() {
 						height="600"
 						src={'https://www.youtube.com/embed/' + id + '?autoplay=1'}
 						title="YouTube video player"
-						frameborder="0"
+						frameBorder="0"
 						allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 					></iframe>
 					<Card className="streaming-chat">
-						<div className="streaming-chat-top">
+						<div ref={chatRef} className="streaming-chat-top">
 							<div className="streaming-chat-wrap">
 								<UserChat
 									pic="https://source.unsplash.com/daily"
