@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router';
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -11,6 +12,7 @@ export default function SignUpPage() {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 	const [errors, setErrors] = useState({});
+	const history = useHistory();
 
 	const processSubmit = e => {
 		e.preventDefault();
@@ -44,11 +46,7 @@ export default function SignUpPage() {
 		};
 		fetchedAuthData.userlist.push(data);
 		localStorage.setItem('authData', JSON.stringify(fetchedAuthData));
-
-		console.log(
-			'retreive item is ',
-			JSON.parse(localStorage.getItem('authData'))
-		);
+		history.push('/login')
 	};
 
 	const handleError = target => {
