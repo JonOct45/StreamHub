@@ -33,7 +33,6 @@ export default function HomePage() {
 							></img>
 						</NavLink>
 					</div>
-
 					<div class="col-3">
 						<NavLink to="/streaming/oqxAJKy0ii4">
 							<img
@@ -63,7 +62,6 @@ export default function HomePage() {
 					</div>
 				</div>
 			</div>
-
 			<div class="Box">
 				<div class="title">Most Watched Movies</div>
 				<NavLink to="/streaming/oqxAJKy0ii4">

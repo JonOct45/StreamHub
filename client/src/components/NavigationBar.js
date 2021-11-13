@@ -51,7 +51,7 @@ export default function NavigationBar({ isAuth, handleLogout }) {
 										<NavLink to="/profile/settings">Profile Settings</NavLink>
 									</NavDropdown.Item>
 									<NavDropdown.Item as="div">
-										<NavLink to="/subscription">My subscription</NavLink>
+										<NavLink to="/subscription">My Subscription</NavLink>
 									</NavDropdown.Item>
 									<NavDropdown.Divider />
 									<NavDropdown.Item
@@ -59,7 +59,7 @@ export default function NavigationBar({ isAuth, handleLogout }) {
 										style={{ cursor: 'pointer', color: '#dc3545' }}
 										onClick={handleLogout}
 									>
-										<span>Sign out</span>
+										<span>Sign Out</span>
 									</NavDropdown.Item>
 								</NavDropdown>
 								{/* <Nav.Link as="div">

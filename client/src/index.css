@@ -235,12 +235,14 @@ code {
 	left: -1px;
 	width: 341px;
 	height: 220px;
+	object-fit: cover;
 	position: absolute;
+
+	object-position: top;
+	background: #FFFFFF;
 	background: #ffffff;
 	box-sizing: border-box;
 	border: 1px solid #000000;
-	object-position: top;
-	object-fit: cover;
 }
 
 .jungleCruise,
@@ -249,10 +251,65 @@ code {
 	left: -1px;
 	width: 341px;
 	height: 178px;
+	object-fit: cover;
 	position: absolute;
+	object-position: top;
+	background: #FFFFFF;
 	background: #ffffff;
 	box-sizing: border-box;
 	border: 1px solid #000000;
-	object-position: top;
-	object-fit: cover;
 }
+
+
+.wrap {
+	top: 104px;
+	left: 650px;
+	right: 306px;
+	bottom: 496px;
+	padding: 150px;
+	position: absolute;
+	border: solid 1px #767676;
+}
+
+.descriptionWrap {
+	top: 15px;
+	right:  250px;
+	position: absolute;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 12px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	border-radius: 10px;
+	box-shadow: inset 0 0 5px grey; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: grey; 
+	border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover{
+	background: grey; 
+  }
+
+.scroller {
+	left: 281px;
+	padding: 1rem;
+    overflow-y: auto;
+	max-height: 500px;
+}
+
+.boldText {
+	bottom: -12px;
+	right: -226px;
+	font-weight: bold;
+	position: absolute;
+}
+-----------------------------------------------------End of Raymond Code-------------------------------------
