@@ -54,7 +54,6 @@
 
 .settings-profile {
 	display: flex;
-	justify-content: center;
 }
 
 .settings-profile img {
@@ -109,6 +108,14 @@
 	max-height: 600px;
 	overflow-y: auto;
 	border-radius: 0 !important;
+}
+
+.streaming-userlist a,
+.streaming-userlist a.active,
+.streaming-userlist a:active,
+.streaming-userlist a:hover {
+	text-decoration: none;
+	color: unset;
 }
 
 .streaming-chat-top:hover::-webkit-scrollbar,
@@ -166,22 +173,6 @@
 	overflow-y: auto;
 }
 
-.recommended {
-	gap: 0.8rem;
-}
-
-.recommended div {
-	border: none !important;
-}
-
-.recommended a,
-.recommended a.active,
-.recommended a:active,
-.recommended a:hover {
-	text-decoration: none;
-	color: unset;
-}
-
 @media (max-width: 992px) {
 	.streaming-userlist {
 		display: none !important;
@@ -200,6 +191,87 @@
 		height: 20rem;
 	}
 }
+
+/* Vedio List  */
+
+.videolist {
+	gap: 0.8rem;
+}
+
+.videolist div {
+	border: none !important;
+}
+
+.videolist a,
+.videolist a.active,
+.videolist a:active,
+.videolist a:hover {
+	text-decoration: none;
+	color: unset;
+}
+
+@media (max-width: 768px) {
+	.videolist {
+		flex-direction: column !important;
+	}
+}
+
+/* User List  */
+
+.userlist {
+	gap: 0.8rem;
+}
+
+.userlist img {
+	height: 10rem;
+	object-fit: cover;
+}
+
+.userlist p {
+	font-size: 1rem;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.userlist .card {
+	width: 175px;
+	border: none !important;
+	box-shadow: var(--elevation-3);
+	border-radius: 5px !important;
+}
+
+.userlist a + div {
+	position: relative;
+	height: 3rem;
+}
+
+
+.userlist button {
+	width: 6rem;
+	position: absolute;
+	bottom: 10px;
+	left: calc(50% - 3rem);
+}
+
+.userlist a,
+.userlist a.active,
+.userlist a:active,
+.userlist a:hover {
+	text-decoration: none;
+	color: unset;
+}
+
+@media (max-width: 768px) {
+	.userlist {
+		flex-direction: column !important;
+		align-items: center ;
+	}
+
+	.userlist .card {
+		width: 100%;
+	}
+}
+
 
 /* User Card */
 
@@ -275,4 +347,40 @@
 
 .modal-body input {
 	box-shadow: none !important;
+}
+
+/* Subscription Page */
+
+.subscription-top {
+	display: flex;
+}
+
+.subscription-top img {
+	height: 20rem;
+	object-fit: cover;
+	border-radius: 0 !important;
+}
+
+.subscription-profile {
+	border: none !important;
+	box-shadow: var(--elevation-3);
+}
+
+.button-group {
+	margin-top: 1rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.button-group button {
+	width: 47%;
+	border-radius: 0;
+}
+
+@media (max-width: 768px) {
+	.subscription-top {
+		flex-direction: column;
+		align-items: center;
+	}
+
 }

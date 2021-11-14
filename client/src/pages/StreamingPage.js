@@ -1,15 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router';
+import { NavLink } from 'react-router-dom';
 import Container from 'react-bootstrap/esm/Container';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import FloatingLabel from 'react-bootstrap/esm/FloatingLabel';
 import Form from 'react-bootstrap/Form';
-import CardGroup from 'react-bootstrap/CardGroup';
-
 import UserCard from '../components/UserCard';
 import UserChat from '../components/UserChat';
-import { NavLink } from 'react-router-dom';
+import VideoList from '../components/VideoList';
 
 import userlist from '../database/friendlist';
 
@@ -54,23 +53,27 @@ export default function StreamingPage() {
 					<Card className="streaming-userlist">
 						<ListGroup variant="flush">
 							<ListGroup.Item>
-								<UserCard
-									pic={
-										localStorage.getItem('imgUrl') ||
-										'https://source.unsplash.com/user/erondu/daily'
-									}
-									name={localStorage.getItem('username') || 'visitor456'}
-									state="active"
-								/>
+								<NavLink to="/subscription">
+									<UserCard
+										pic={
+											localStorage.getItem('imgUrl') ||
+											'https://source.unsplash.com/user/erondu/daily'
+										}
+										name={localStorage.getItem('username') || 'visitor456'}
+										state="active"
+									/>
+								</NavLink>
 							</ListGroup.Item>
 							{userlist.map(user => {
 								return (
 									<ListGroup.Item key={user.id}>
-										<UserCard
-											pic={'https://source.unsplash.com/random'}
-											name={user.name}
-											state="active"
-										/>
+										<NavLink to={'/user/' + user.id}>
+											<UserCard
+												pic={'https://source.unsplash.com/random/' + user.id}
+												name={user.firstName}
+												state={user.state === 0 ? 'idle' : 'active'}
+											/>
+										</NavLink>
 									</ListGroup.Item>
 								);
 							})}
@@ -129,66 +132,7 @@ export default function StreamingPage() {
 					</Card>
 				</div>
 			</Container>
-			<Container>
-				<h2 className="mt-3"><center>Recommended</center></h2>
-				<CardGroup className="recommended mt-3">
-					<Card>
-						<NavLink to="/streaming/R9DWTt37khU">
-							<Card.Img
-								variant="top"
-								src="http://i3.ytimg.com/vi/R9DWTt37khU/maxresdefault.jpg"
-							/>
-							<Card.Body>
-								<Card.Text>A Magical First Playthrough of ELDEN RING</Card.Text>
-							</Card.Body>
-						</NavLink>
-					</Card>
-					<Card>
-						<NavLink to="/streaming/M7XM597XO94">
-							<Card.Img
-								variant="top"
-								src="http://i3.ytimg.com/vi/KlNJeURHIjU/maxresdefault.jpg"
-							/>
-							<Card.Body>
-								<Card.Text>John Wick: Chapter 3</Card.Text>
-							</Card.Body>
-						</NavLink>
-					</Card>
-					<Card>
-						<NavLink to="/streaming/LBy9FWrFg-0">
-							<Card.Img
-								variant="top"
-								src="http://i3.ytimg.com/vi/LBy9FWrFg-0/maxresdefault.jpg"
-							/>
-							<Card.Body>
-								<Card.Text>Skiptrace</Card.Text>
-							</Card.Body>
-						</NavLink>
-					</Card>
-					<Card>
-						<NavLink to="/streaming/TlflQmjlRxQ">
-							<Card.Img
-								variant="top"
-								src="http://i3.ytimg.com/vi/TlflQmjlRxQ/maxresdefault.jpg"
-							/>
-							<Card.Body>
-								<Card.Text>The Magic of Belle Isle</Card.Text>
-							</Card.Body>
-						</NavLink>
-					</Card>
-					<Card>
-						<NavLink to="/streaming/NHN3Lt8sZow">
-							<Card.Img
-								variant="top"
-								src="http://i3.ytimg.com/vi/NHN3Lt8sZow/maxresdefault.jpg"
-							/>
-							<Card.Body>
-								<Card.Text>Benched</Card.Text>
-							</Card.Body>
-						</NavLink>
-					</Card>
-				</CardGroup>
-			</Container>
+			<VideoList title="Recommended" />
 		</>
 	);
 }

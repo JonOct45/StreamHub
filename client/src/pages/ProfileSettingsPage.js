@@ -59,7 +59,10 @@ export default function ProfileSettingsPage() {
 				<h2>Profile Settings </h2>
 				<div className="settings-profile">
 					<img
-						src={localStorage.getItem('imgUrl') || "https://source.unsplash.com/user/erondu/daily"}
+						src={
+							localStorage.getItem('imgUrl') ||
+							'https://source.unsplash.com/user/erondu/daily'
+						}
 						alt="User Pic"
 					/>
 					<div>

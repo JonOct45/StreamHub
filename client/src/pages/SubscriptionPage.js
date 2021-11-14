@@ -1,247 +1,241 @@
-import React from 'react'
+import React, { useLayoutEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import Container from 'react-bootstrap/esm/Container';
 import Card from 'react-bootstrap/Card';
-import CardGroup from 'react-bootstrap/CardGroup';
-import { NavLink } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+
+import VideoList from '../components/VideoList';
+import UserList from '../components/UserList';
+
+import friendlist from '../database/friendlist';
 
 export default function SubscriptionPage() {
-    return (
-        <div>
-            <Container>
-                <Card style={{ width: '18rem' }}>
-                    <Card>
-                        <Card.Header><center><b>Raymond Huang</b></center></Card.Header>
-                        <Card.Img variant="top" src="images/avatar.png" />
-                        <Card.Footer>
-                            <div class="row">
-                                <div class="col-6">
-                                    <small className="text-muted"><center><b>Subscribed</b></center></small>  
-                                </div>
-                                <div class="col-6">
-                                    <small className="text-muted"><center><b>+ Friends</b></center></small>
-                                </div>
-                            </div>  
-                        </Card.Footer>
-                    </Card>
-                </Card>
-            </Container>
+	const [subscribe, setSubscribe] = useState(false);
+	const [isFriend, setIsFriend] = useState(false);
+	const { id } = useParams('id');
 
-            <Container>
-                <div class="wrap">
-                    <div class="descriptionWrap">
-                        <Card.Body>
-                            <Card.Title><b>About Me:</b></Card.Title>
-                            <Card.Text>
-                                Hello, I love watching horror movies. If you love to watch horror movies as well,
-                                please do subscribe because I tend to stream movies in that category every Friday
-                                and Saturday.
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Body>
-                            <Card.Title><b>Follow My Social Media:</b></Card.Title>
-                            <Card.Text>
-                                ✤ Instagram <br></br>
-                                ✤ Discord <br></br>
-                                ✤ TikTok <br></br>
-                                ✤ Youtube <br></br>
-                                ✤ Twitter
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Body>
-                            <Card.Text>
-                                <div class="boldText">
-                                    Number of Subscribers: 2,054
-                                </div>
-                            </Card.Text>
-                        </Card.Body>
-                    </div>
-                </div>
-            </Container>
+	useLayoutEffect(() => {
+		console.log(id);
+		const subscriptionlist = localStorage.getItem('subscriptionlist');
+		if (subscriptionlist) {
+			const array = subscriptionlist.split(',');
+			console.log(array);
+			for (const uid of array) {
+				if (uid === id) {
+					setSubscribe(true);
+				}
+			}
+		}
+		const friendlist = localStorage.getItem('friendlist');
+		if (friendlist) {
+			const array = friendlist.split(',');
+			console.log(array);
+			for (const uid of array) {
+				if (uid === id) {
+					setIsFriend(true);
+				}
+			}
+		}
+	}, [id]);
 
-            <div class="scroller">
-                <Container>
-                    <h2 className="mt-3 "><center>Featured/Videos</center></h2>
-                    <CardGroup className="recommended mt-3">
-                        <Card>
-                            <NavLink to="/streaming/R9DWTt37khU">
-                                <Card.Img
-                                    variant="top"
-                                    src="http://i3.ytimg.com/vi/R9DWTt37khU/maxresdefault.jpg"
-                                />
-                                <Card.Body>
-                                    <Card.Text>A Magical First Playthrough of ELDEN RING</Card.Text>
-                                </Card.Body>
-                            </NavLink>
-                        </Card>
-                        <Card>
-                            <NavLink to="/streaming/M7XM597XO94">
-                                <Card.Img
-                                    variant="top"
-                                    src="http://i3.ytimg.com/vi/KlNJeURHIjU/maxresdefault.jpg"
-                                />
-                                <Card.Body>
-                                    <Card.Text><center>John Wick: Chapter 3</center></Card.Text>
-                                </Card.Body>
-                            </NavLink>
-                        </Card>
-                        <Card>
-                            <NavLink to="/streaming/LBy9FWrFg-0">
-                                <Card.Img
-                                    variant="top"
-                                    src="http://i3.ytimg.com/vi/LBy9FWrFg-0/maxresdefault.jpg"
-                                />
-                                <Card.Body>
-                                    <Card.Text><center>Skiptrace</center></Card.Text>
-                                </Card.Body>
-                            </NavLink>
-                        </Card>
-                        <Card>
-                            <NavLink to="/streaming/TlflQmjlRxQ">
-                                <Card.Img
-                                    variant="top"
-                                    src="http://i3.ytimg.com/vi/TlflQmjlRxQ/maxresdefault.jpg"
-                                />
-                                <Card.Body>
-                                    <Card.Text><center>The Magic of Belle Isle</center></Card.Text>
-                                </Card.Body>
-                            </NavLink>
-                        </Card>
-                        <Card>
-                            <NavLink to="/streaming/NHN3Lt8sZow">
-                                <Card.Img
-                                    variant="top"
-                                    src="http://i3.ytimg.com/vi/NHN3Lt8sZow/maxresdefault.jpg"
-                                />
-                                <Card.Body>
-                                    <Card.Text><center>Benched</center></Card.Text>
-                                </Card.Body>
-                            </NavLink>
-                        </Card>
-                    </CardGroup>
-                </Container>
+	const handleSubscribe = target => {
+		console.log('Subscribe');
+		let subscriptionlist = localStorage.getItem(target);
+		if (subscriptionlist) {
+			subscriptionlist += id + ',';
+		} else {
+			subscriptionlist = id + ',';
+		}
+		localStorage.setItem(target, subscriptionlist);
+		if (target === 'subscriptionlist') setSubscribe(true);
+		else setIsFriend(true);
+	};
 
-                <Container>
-                    <h2 className="mt-3 "><center>Recommended/Users</center></h2>
-                    <CardGroup className="recommended mt-3">
-                        <Card>
-                            <NavLink to="/streaming/R9DWTt37khU">
-                                <Card.Img
-                                    variant="top"
-                                    src="http://i3.ytimg.com/vi/R9DWTt37khU/maxresdefault.jpg"
-                                />
-                                <Card.Body>
-                                    <Card.Text>A Magical First Playthrough of ELDEN RING</Card.Text>
-                                </Card.Body>
-                            </NavLink>
-                        </Card>
-                        <Card>
-                            <NavLink to="/streaming/M7XM597XO94">
-                                <Card.Img
-                                    variant="top"
-                                    src="http://i3.ytimg.com/vi/KlNJeURHIjU/maxresdefault.jpg"
-                                />
-                                <Card.Body>
-                                    <Card.Text><center>John Wick: Chapter 3</center></Card.Text>
-                                </Card.Body>
-                            </NavLink>
-                        </Card>
-                        <Card>
-                            <NavLink to="/streaming/LBy9FWrFg-0">
-                                <Card.Img
-                                    variant="top"
-                                    src="http://i3.ytimg.com/vi/LBy9FWrFg-0/maxresdefault.jpg"
-                                />
-                                <Card.Body>
-                                    <Card.Text><center>Skiptrace</center></Card.Text>
-                                </Card.Body>
-                            </NavLink>
-                        </Card>
-                        <Card>
-                            <NavLink to="/streaming/TlflQmjlRxQ">
-                                <Card.Img
-                                    variant="top"
-                                    src="http://i3.ytimg.com/vi/TlflQmjlRxQ/maxresdefault.jpg"
-                                />
-                                <Card.Body>
-                                    <Card.Text><center>The Magic of Belle Isle</center></Card.Text>
-                                </Card.Body>
-                            </NavLink>
-                        </Card>
-                        <Card>
-                            <NavLink to="/streaming/NHN3Lt8sZow">
-                                <Card.Img
-                                    variant="top"
-                                    src="http://i3.ytimg.com/vi/NHN3Lt8sZow/maxresdefault.jpg"
-                                />
-                                <Card.Body>
-                                    <Card.Text><center>Benched</center></Card.Text>
-                                </Card.Body>
-                            </NavLink>
-                        </Card>
-                    </CardGroup>
-                </Container>
-                
-                <Container>
-                    <h2 className="mt-3 "><center>More Videos</center></h2>
-                    <CardGroup className="recommended mt-3">
-                        <Card>
-                            <NavLink to="/streaming/R9DWTt37khU">
-                                <Card.Img
-                                    variant="top"
-                                    src="http://i3.ytimg.com/vi/R9DWTt37khU/maxresdefault.jpg"
-                                />
-                                <Card.Body>
-                                    <Card.Text>A Magical First Playthrough of ELDEN RING</Card.Text>
-                                </Card.Body>
-                            </NavLink>
-                        </Card>
-                        <Card>
-                            <NavLink to="/streaming/M7XM597XO94">
-                                <Card.Img
-                                    variant="top"
-                                    src="http://i3.ytimg.com/vi/KlNJeURHIjU/maxresdefault.jpg"
-                                />
-                                <Card.Body>
-                                    <Card.Text><center>John Wick: Chapter 3</center></Card.Text>
-                                </Card.Body>
-                            </NavLink>
-                        </Card>
-                        <Card>
-                            <NavLink to="/streaming/LBy9FWrFg-0">
-                                <Card.Img
-                                    variant="top"
-                                    src="http://i3.ytimg.com/vi/LBy9FWrFg-0/maxresdefault.jpg"
-                                />
-                                <Card.Body>
-                                    <Card.Text><center>Skiptrace</center></Card.Text>
-                                </Card.Body>
-                            </NavLink>
-                        </Card>
-                        <Card>
-                            <NavLink to="/streaming/TlflQmjlRxQ">
-                                <Card.Img
-                                    variant="top"
-                                    src="http://i3.ytimg.com/vi/TlflQmjlRxQ/maxresdefault.jpg"
-                                />
-                                <Card.Body>
-                                    <Card.Text><center>The Magic of Belle Isle</center></Card.Text>
-                                </Card.Body>
-                            </NavLink>
-                        </Card>
-                        <Card>
-                            <NavLink to="/streaming/NHN3Lt8sZow">
-                                <Card.Img
-                                    variant="top"
-                                    src="http://i3.ytimg.com/vi/NHN3Lt8sZow/maxresdefault.jpg"
-                                />
-                                <Card.Body>
-                                    <Card.Text><center>Benched</center></Card.Text>
-                                </Card.Body>
-                            </NavLink>
-                        </Card>
-                    </CardGroup>
-                </Container>
-            </div>
-        </div>
-    )
+	const handleUnSubscribe = target => {
+		let subscriptionlist = localStorage.getItem(target);
+		if (subscriptionlist) {
+			console.log(subscriptionlist);
+			subscriptionlist = subscriptionlist.replace(id + ',', '');
+		}
+		localStorage.setItem(target, subscriptionlist);
+
+		if (target === 'subscriptionlist') setSubscribe(false);
+		else setIsFriend(false);
+	};
+
+	return (
+		<div>
+			<Container style={{ marginBottom: '10vh' }}>
+				<div className="subscription-top">
+					<div>
+						<Card className="subscription-profile" style={{ width: '18rem' }}>
+							<Card.Header>
+								<center>
+									<b>
+										{id
+											? `${friendlist[id - 1].firstName} ${
+													friendlist[id - 1].lastName
+											  }`
+											: localStorage.getItem('username')}
+									</b>
+								</center>
+							</Card.Header>
+							<Card.Img
+								variant="top"
+								src={
+									id
+										? 'https://source.unsplash.com/random/' + id
+										: localStorage.getItem('imgUrl') ||
+										  'https://source.unsplash.com/user/erondu/daily'
+								}
+							/>
+						</Card>
+						<div>
+							{id ? (
+								<div className="button-group">
+									{/* <div>
+												<small className="text-muted">
+													<center>
+														<b>Subscribed</b>
+													</center>
+												</small>
+                                            </div>
+												
+											<div>
+												<small className="text-muted">
+													<center>
+														<b>+ Friends</b>
+													</center>
+												</small>
+											</div> */}
+									{subscribe ? (
+										<Button
+											variant="secondary"
+											onClick={() => handleUnSubscribe('subscriptionlist')}
+											size="sm"
+										>
+											Subscribed
+										</Button>
+									) : (
+										<Button
+											onClick={() => handleSubscribe('subscriptionlist')}
+											size="sm"
+										>
+											Subscribe
+										</Button>
+									)}
+									{isFriend ? (
+										<Button
+											variant="secondary"
+											onClick={() => handleUnSubscribe('friendlist')}
+											size="sm"
+										>
+											Unfriend
+										</Button>
+									) : (
+										<Button
+											onClick={() => handleSubscribe('friendlist')}
+											size="sm"
+										>
+											Add Friend
+										</Button>
+									)}
+								</div>
+							) : (
+								<>
+									<span>Subscribers: 2,054</span>
+								</>
+							)}
+						</div>
+					</div>
+					{/* <div className="wrap">
+					<div className="descriptionWrap">
+						<Card.Body>
+							<Card.Title>
+								<b>About Me:</b>
+							</Card.Title>
+							<Card.Text>
+								Hello, I love watching horror movies. If you love to watch
+								horror movies as well, please do subscribe because I tend to
+								stream movies in that category every Friday and Saturday.
+							</Card.Text>
+						</Card.Body>
+						<Card.Body>
+							<Card.Title>
+								<b>Follow My Social Media:</b>
+							</Card.Title>
+							<Card.Text>
+								✤ Instagram <br></br>✤ Discord <br></br>✤ TikTok <br></br>✤
+								Youtube <br></br>✤ Twitter
+							</Card.Text>
+						</Card.Body>
+						<Card.Body>
+							<Card.Text>
+								<div className="boldText">Number of Subscribers: 2,054</div>
+							</Card.Text>
+						</Card.Body>
+					</div>
+				</div> */}
+					<div className="spacer"></div>
+					<div className="w-50">
+						<div>
+							<Card.Body>
+								<Card.Title>
+									<b>About Me:</b>
+								</Card.Title>
+								<Card.Text>
+									{id
+										? friendlist[id - 1].about
+										: '	Hello, I love watching horror movies. If you love to watch horror movies as well, please do subscribe because I tend to stream movies in that category every Friday and Saturday.'}
+								</Card.Text>
+							</Card.Body>
+							<Card.Body>
+								<Card.Title>
+									<b>Follow My Social Media:</b>
+								</Card.Title>
+								<Card.Text>
+									✤ Instagram <br></br>✤ Discord <br></br>✤ TikTok <br></br>✤
+									Youtube <br></br>✤ Twitter
+								</Card.Text>
+							</Card.Body>
+						</div>
+					</div>
+				</div>
+			</Container>
+			{/* 
+			<Container>
+				<div className="wrap">
+					<div className="descriptionWrap">
+						<Card.Body>
+							<Card.Title>
+								<b>About Me:</b>
+							</Card.Title>
+							<Card.Text>
+								Hello, I love watching horror movies. If you love to watch
+								horror movies as well, please do subscribe because I tend to
+								stream movies in that category every Friday and Saturday.
+							</Card.Text>
+						</Card.Body>
+						<Card.Body>
+							<Card.Title>
+								<b>Follow My Social Media:</b>
+							</Card.Title>
+							<Card.Text>
+								✤ Instagram <br></br>✤ Discord <br></br>✤ TikTok <br></br>✤
+								Youtube <br></br>✤ Twitter
+							</Card.Text>
+						</Card.Body>
+						<Card.Body>
+							<Card.Text>
+								<div className="boldText">Number of Subscribers: 2,054</div>
+							</Card.Text>
+						</Card.Body>
+					</div>
+				</div>
+			</Container> */}
+			<UserList title="Recommended/Users" />
+			<VideoList title="Featured/Videos" />
+			<VideoList title="More Videos" />
+		</div>
+	);
 }

@@ -8,7 +8,7 @@ export default function UserCard({ pic, name, state }) {
 			color = 'green';
 			break;
 		case 'idle':
-			color = 'yellow';
+			color = '#FFBF00';
 			break;
 		default:
 			color = 'green';

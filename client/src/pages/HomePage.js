@@ -4,106 +4,106 @@ import { NavLink } from 'react-router-dom';
 export default function HomePage() {
 	return (
 		<div>
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-1"></div>
-					<div class="col-3">
+			<div className="container-fluid">
+				<div style={{ width: '1920px' }} className="row">
+					<div className="col-1"></div>
+					<div className="col-3">
 						<NavLink to="/streaming/gUTtJjV852c">
-							<img class="doraMovie" src="/images/movie1.jpg" alt="Dora"></img>
-							<div class="movie1">Dora Explorer</div>
+							<img className="doraMovie" src="/images/movie1.jpg" alt="Dora"></img>
+							<div className="movie1">Dora Explorer</div>
 							<img
-								class="playButton1"
+								className="playButton1"
 								src="/images/PlayButton.png"
 								alt="button1"
 							></img>
 						</NavLink>
 					</div>
-					<div class="col-3">
+					<div className="col-3">
 						<NavLink to="/streaming/8YjFbMbfXaQ">
 							<img
-								class="shangChiMovie"
+								className="shangChiMovie"
 								src="/images/shangchi.jpg"
 								alt="ShangChi"
 							></img>
-							<div class="movie2">Shang Chi</div>
+							<div className="movie2">Shang Chi</div>
 							<img
-								class="playButton2"
+								className="playButton2"
 								src="/images/PlayButton.png"
 								alt="button2"
 							></img>
 						</NavLink>
 					</div>
-					<div class="col-3">
+					<div className="col-3">
 						<NavLink to="/streaming/oqxAJKy0ii4">
 							<img
-								class="squidGame"
+								className="squidGame"
 								src="/images/squidgame.jpg"
 								alt="SquidGame"
 							></img>
-							<div class="movie2">Squid Game</div>
+							<div className="movie2">Squid Game</div>
 							<img
-								class="playButton3"
+								className="playButton3"
 								src="/images/PlayButton.png"
 								alt="button3"
 							></img>
 						</NavLink>
 					</div>
-					<div class="col-1">
+					<div className="col-1">
 						<img
-							class="rightClick"
+							className="rightClick"
 							src="/images/rightArrow.jpg"
 							alt="right arrow"
 						></img>
 						<img
-							class="leftClick"
+							className="leftClick"
 							src="/images/leftArrow.jpg"
 							alt="left arrow"
 						></img>
 					</div>
 				</div>
 			</div>
-			<div class="Box">
-				<div class="title">Most Watched Movies</div>
+			<div className="Box">
+				<div className="title">Most Watched Movies</div>
 				<NavLink to="/streaming/oqxAJKy0ii4">
-					<div class="carouselMiddle">
+					<div className="carouselMiddle">
 						<img
-							class="squidGame"
+							className="squidGame"
 							src="/images/squidgame.jpg"
 							alt="SquidGame"
 						></img>
 					</div>
 				</NavLink>
-				<div class="carouselRight1">
+				<div className="carouselRight1">
 					<img
-						class="spiderman"
+						className="spiderman"
 						src="/images/spiderman.jpg"
 						alt="Spiderman"
 					></img>
 				</div>
-				<div class="carouselRight2">
+				<div className="carouselRight2">
 					<img
-						class="jungleCruise"
+						className="jungleCruise"
 						src="/images/junglecruise.jpg"
 						alt="Jungle Cruise"
 					></img>
 				</div>
-				<div class="carouselLeft1">
+				<div className="carouselLeft1">
 					<img
-						class="blackWidow"
+						className="blackWidow"
 						src="/images/blackwidow.jpg"
 						alt="Black Widow"
 					></img>
 				</div>
-				<div class="carouselLeft2">
-					<img class="wendyWu" src="/images/wendywu.png" alt="Wendy Wu"></img>
+				<div className="carouselLeft2">
+					<img className="wendyWu" src="/images/wendywu.png" alt="Wendy Wu"></img>
 				</div>
 				<img
-					class="rightClick1"
+					className="rightClick1"
 					src="/images/rightArrow.jpg"
 					alt="right arrow"
 				></img>
 				<img
-					class="leftClick1"
+					className="leftClick1"
 					src="/images/leftArrow.jpg"
 					alt="left arrow"
 				></img>

@@ -35,6 +35,9 @@ code {
 	--danger-color: #dc3545;
 }
 
+a {
+	text-decoration: none !important;
+}
 
 /*---------------------------Raymond Code-----------------------*/
 .col-1 {
@@ -131,7 +134,7 @@ code {
 	position: absolute;
 	background: #ffffff;
 	box-sizing: border-box;
-	border: 1px solid #000000;
+	/* border: 1px solid #000000; */
 }
 
 .carouselRight1 {
@@ -154,9 +157,9 @@ code {
 	height: 180px;
 	cursor: pointer;
 	position: absolute;
-	background: #ffffff;
+	/* background: #ffffff; */
 	box-sizing: border-box;
-	border: 1px solid #000000;
+	border: px solid #000000;
 }
 
 .carouselLeft1 {
@@ -239,10 +242,10 @@ code {
 	position: absolute;
 
 	object-position: top;
-	background: #FFFFFF;
+	background: #ffffff;
 	background: #ffffff;
 	box-sizing: border-box;
-	border: 1px solid #000000;
+	/* border: 1px solid #000000; */
 }
 
 .jungleCruise,
@@ -254,12 +257,11 @@ code {
 	object-fit: cover;
 	position: absolute;
 	object-position: top;
-	background: #FFFFFF;
+	background: #ffffff;
 	background: #ffffff;
 	box-sizing: border-box;
-	border: 1px solid #000000;
+	/* border: 1px solid #000000; */
 }
-
 
 .wrap {
 	top: 104px;
@@ -273,36 +275,39 @@ code {
 
 .descriptionWrap {
 	top: 15px;
-	right:  250px;
+	right: 250px;
 	position: absolute;
 }
 
-/* width */
+/* 
+
 ::-webkit-scrollbar {
 	width: 12px;
   }
   
-  /* Track */
+   Track 
   ::-webkit-scrollbar-track {
 	border-radius: 10px;
 	box-shadow: inset 0 0 5px grey; 
   }
    
-  /* Handle */
+   Handle 
   ::-webkit-scrollbar-thumb {
 	background: grey; 
 	border-radius: 10px;
   }
   
-  /* Handle on hover */
+   Handle on hover 
   ::-webkit-scrollbar-thumb:hover{
 	background: grey; 
-  }
+  } 
+
+  */
 
 .scroller {
 	left: 281px;
 	padding: 1rem;
-    overflow-y: auto;
+	overflow-y: auto;
 	max-height: 500px;
 }
 

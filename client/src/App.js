@@ -86,6 +86,7 @@ function App() {
 				render={() => <LoginPage handleLogin={login} />}
 			/>
 			<Route path="/streaming/:id" exact component={StreamingPage} />
+			<Route path="/user/:id" exact component={SubscriptionPage} />
 			{/* <Redirect to="/" /> or error page*/}
 		</Switch>
 	);
@@ -101,6 +102,7 @@ function App() {
 				/>
 				<Route path="/streaming/:id" exact component={StreamingPage} />
 				<Route path="/subscription" exact component={SubscriptionPage} />
+				<Route path="/user/:id" exact component={SubscriptionPage} />
 				{/* <Redirect to="/" /> or error page*/}
 			</Switch>
 		);
