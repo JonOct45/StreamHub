@@ -32,7 +32,7 @@ export default function UserList({ title }) {
 		setForceUpdate(forceUpdate + 1);
 	};
 
-	let subscriptionlist = localStorage.getItem('subscriptionlist');
+	let subscriptionlist = localStorage.getItem('subscriptionlist') || '';
 	return (
 		<Container>
 			<h2 className="mt-3">{title}</h2>

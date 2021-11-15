@@ -16,12 +16,15 @@ export default function SubscriptionPage() {
 
 	useLayoutEffect(() => {
 		console.log(id);
+		setSubscribe(false);
+		setIsFriend(false);
 		const subscriptionlist = localStorage.getItem('subscriptionlist');
 		if (subscriptionlist) {
 			const array = subscriptionlist.split(',');
 			console.log(array);
 			for (const uid of array) {
 				if (uid === id) {
+					console.log('set true');
 					setSubscribe(true);
 				}
 			}
@@ -29,7 +32,6 @@ export default function SubscriptionPage() {
 		const friendlist = localStorage.getItem('friendlist');
 		if (friendlist) {
 			const array = friendlist.split(',');
-			console.log(array);
 			for (const uid of array) {
 				if (uid === id) {
 					setIsFriend(true);
@@ -142,9 +144,7 @@ export default function SubscriptionPage() {
 									)}
 								</div>
 							) : (
-								<>
-									<span>Subscribers: 2,054</span>
-								</>
+								<></>
 							)}
 						</div>
 					</div>
@@ -197,6 +197,7 @@ export default function SubscriptionPage() {
 									✤ Instagram <br></br>✤ Discord <br></br>✤ TikTok <br></br>✤
 									Youtube <br></br>✤ Twitter
 								</Card.Text>
+								<Card.Text>Number of Subscribers: 2,054</Card.Text>
 							</Card.Body>
 						</div>
 					</div>
