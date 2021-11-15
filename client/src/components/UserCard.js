@@ -1,5 +1,4 @@
 import React from 'react';
-import { Switch } from 'react-router';
 
 export default function UserCard({ pic, name, state }) {
 	let color = 'grey';

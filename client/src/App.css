@@ -38,8 +38,11 @@
 /* Login Page */
 
 .auth-form {
-	max-width: 30rem !important;
+	max-width: 35rem !important;
 	text-align: left !important;
+	box-shadow: var(--elevation-3);
+	padding: 2rem 3rem 4rem 3rem !important;
+	border-radius: 8px;
 }
 
 .auth-form input {

@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/esm/Container';
 
 export default function SignUpPage() {
@@ -46,7 +45,7 @@ export default function SignUpPage() {
 		};
 		fetchedAuthData.userlist.push(data);
 		localStorage.setItem('authData', JSON.stringify(fetchedAuthData));
-		history.push('/login')
+		history.push('/login');
 	};
 
 	const handleError = target => {
@@ -57,6 +56,7 @@ export default function SignUpPage() {
 
 	return (
 		<Container className="auth-form">
+			<h2 className="mb-5">Sign Up</h2>
 			<Form>
 				<Form.Group className="mb-3" controlId="signupEmail">
 					<Form.Label>Email</Form.Label>
@@ -98,7 +98,7 @@ export default function SignUpPage() {
 						Please enter your username
 					</Form.Control.Feedback>
 				</Form.Group>
-				<Form.Group className="mb-4" controlId="loginPassword">
+				<Form.Group className="mb-3" controlId="loginPassword">
 					<Form.Label>Password</Form.Label>
 					<Form.Control
 						type="password"
@@ -112,6 +112,15 @@ export default function SignUpPage() {
 						Please enter your password
 					</Form.Control.Feedback>
 				</Form.Group>
+				<div className="mb-5">
+					<Form.Check className="d-inline" style={{ marginRight: '1rem' }} />
+					<span>
+						I agree to the{' '}
+						<a href="https://www.privacypolicies.com/live/47bead3e-7005-4cdb-9ae6-a158a9011fa0">
+							terms & conditions
+						</a>
+					</span>
+				</div>
 			</Form>
 			<Button variant="primary" className="w-100" onClick={processSubmit}>
 				Sign Up

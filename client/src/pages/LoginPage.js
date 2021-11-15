@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 
 import Button from 'react-bootstrap/Button';
@@ -40,6 +40,7 @@ export default function LoginPage({ handleLogin }) {
 
 	return (
 		<Container className="auth-form">
+			<h2 className="mb-5">Login</h2>
 			{showError && (
 				<Alert variant="danger" onClose={() => setShowError(false)} dismissible>
 					<Alert.Heading>Login Failed:</Alert.Heading>
@@ -61,7 +62,7 @@ export default function LoginPage({ handleLogin }) {
 						Please enter an email
 					</Form.Control.Feedback>
 				</Form.Group>
-				<Form.Group className="mb-4" controlId="loginPassword">
+				<Form.Group className="mb-5" controlId="loginPassword">
 					<Form.Label>Password</Form.Label>
 					<Form.Control
 						type="password"
