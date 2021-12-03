@@ -110,6 +110,7 @@
 	width: 12rem;
 	max-height: 600px;
 	overflow-y: auto;
+	overflow-x: hidden;
 	border-radius: 0 !important;
 }
 
@@ -201,8 +202,14 @@
 	gap: 0.8rem;
 }
 
+
 .videolist div {
 	border: none !important;
+}
+
+.videolist .card-text {
+	font-family: 'Inter';
+	font-weight: 500;
 }
 
 .videolist a,
@@ -212,6 +219,9 @@
 	text-decoration: none;
 	color: unset;
 }
+
+
+
 
 @media (max-width: 768px) {
 	.videolist {
@@ -243,11 +253,16 @@
 	border-radius: 5px !important;
 }
 
+.userlist a p {
+	font-family: 'Inter';
+	font-weight: 500;
+}
+
+
 .userlist a + div {
 	position: relative;
 	height: 3rem;
 }
-
 
 .userlist button {
 	width: 6rem;
@@ -267,7 +282,7 @@
 @media (max-width: 768px) {
 	.userlist {
 		flex-direction: column !important;
-		align-items: center ;
+		align-items: center;
 	}
 
 	.userlist .card {
@@ -275,8 +290,12 @@
 	}
 }
 
-
 /* User Card */
+
+.list-group-item:hover {
+	background-color: hsl(210, 8%, 95%);
+	transform: scale(1.1);
+}
 
 .user-card img {
 	width: 35px;
@@ -369,6 +388,16 @@
 	box-shadow: var(--elevation-3);
 }
 
+.subscription-profile span {
+	font-family: 'Inter';
+	font-weight: 500;
+}
+
+
+.subscription-profile .card-header {
+	background-color: #fff;
+}
+
 .button-group {
 	margin-top: 1rem;
 	display: flex;
@@ -385,5 +414,4 @@
 		flex-direction: column;
 		align-items: center;
 	}
-
 }

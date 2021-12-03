@@ -25,11 +25,14 @@ export default function NavigationBar({ isAuth, handleLogout }) {
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<div style={{ flex: '1' }} />
 					<Nav style={{ alignItems: 'baseline' }}>
+						<Nav.Link as="div">
+							<NavLink to="/">Home</NavLink>
+						</Nav.Link>
+						<Nav.Link as="div">
+							<NavLink to="/streaming/oqxAJKy0ii4">Live Streaming</NavLink>
+						</Nav.Link>
 						{!isAuth ? (
 							<>
-								<Nav.Link as="div">
-									<NavLink to="/streaming/oqxAJKy0ii4">Live Streaming</NavLink>
-								</Nav.Link>
 								<Nav.Link as="div">
 									<NavLink to="/login">Log in</NavLink>
 								</Nav.Link>
@@ -39,9 +42,6 @@ export default function NavigationBar({ isAuth, handleLogout }) {
 							</>
 						) : (
 							<>
-								<Nav.Link as="div">
-									<NavLink to="/streaming/oqxAJKy0ii4">Live Streaming</NavLink>
-								</Nav.Link>
 								<NavDropdown
 									className="navbar-dropdown"
 									title={localStorage.getItem('username')}

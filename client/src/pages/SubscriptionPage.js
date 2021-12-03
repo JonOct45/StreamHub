@@ -73,13 +73,13 @@ export default function SubscriptionPage() {
 						<Card className="subscription-profile" style={{ width: '18rem' }}>
 							<Card.Header>
 								<center>
-									<b>
+									<span>
 										{id
 											? `${friendlist[id - 1].firstName} ${
 													friendlist[id - 1].lastName
 											  }`
 											: localStorage.getItem('username')}
-									</b>
+									</span>
 								</center>
 							</Card.Header>
 							<Card.Img

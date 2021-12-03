@@ -53,7 +53,7 @@ export default function StreamingPage() {
 					<Card className="streaming-userlist">
 						<ListGroup variant="flush">
 							<ListGroup.Item>
-								<NavLink to="/subscription">
+								<NavLink to={localStorage.getItem('username') ? "/subscription" : "/login"}>
 									<UserCard
 										pic={
 											localStorage.getItem('imgUrl') ||
